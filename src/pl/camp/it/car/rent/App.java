@@ -1,5 +1,6 @@
 package pl.camp.it.car.rent;
 
+import pl.camp.it.car.rent.database.UserDB;
 import pl.camp.it.car.rent.database.VehicleDB;
 import pl.camp.it.car.rent.gui.GUI;
 
@@ -8,11 +9,10 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         VehicleDB vehicleDB = new VehicleDB();
+        UserDB userDB = new UserDB();
+        boolean isWorking = Authenticator.authenticate(userDB);
         Scanner scanner = new Scanner(System.in);
 
-        //????
-
-        boolean isWorking = true;
         while(isWorking) {
             GUI.showMenu();
 
@@ -30,6 +30,7 @@ public class App {
                     }
                     break;
                 case "3":
+                    scanner.close();
                     isWorking = false;
                     break;
 

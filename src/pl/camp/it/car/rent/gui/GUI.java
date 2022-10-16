@@ -2,6 +2,9 @@ package pl.camp.it.car.rent.gui;
 
 import pl.camp.it.car.rent.model.Bus;
 import pl.camp.it.car.rent.model.Car;
+import pl.camp.it.car.rent.model.User;
+
+import java.util.Scanner;
 
 public class GUI {
     public static void showMenu() {
@@ -25,5 +28,13 @@ public class GUI {
                     currentBus.getSeats() + " " +
                     currentBus.getPlate() + " " + currentBus.isRent());
         }
+    }
+
+    public static User readLoginAndPassword() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Login:");
+        String login = scanner.nextLine();
+        System.out.println("Password:");
+        return new User(login, scanner.nextLine());
     }
 }
