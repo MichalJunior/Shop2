@@ -7,7 +7,7 @@ import pl.camp.it.car.rent.model.User;
 
 public class Authenticator {
     public static String seed = "1Tl8*G3Ertpxvj0%8qpy";
-    
+    public static User loggedUser;
 
     public static boolean authenticate(UserDB userDB) {
 
@@ -18,7 +18,7 @@ public class Authenticator {
                     DigestUtils.md5Hex(user.getPassword() + Authenticator.seed);
             if(userFromDB != null &&
                     userFromDB.getPassword().equals(hashedUserPassword)) {
-
+                Authenticator.loggedUser = userFromDB;
                 return true;
             }
         }

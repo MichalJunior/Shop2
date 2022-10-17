@@ -43,6 +43,24 @@ public class VehicleDB {
         return false;
     }
 
+    public void addCar(Car car) {
+        Car[] newCars = new Car[this.cars.length + 1];
+        for(int i = 0; i < this.cars.length; i++) {
+            newCars[i] = this.cars[i];
+        }
+        newCars[newCars.length - 1] = car;
+        this.cars = newCars;
+    }
+
+    public void addBus(Bus bus) {
+        Bus[] newBuses = new Bus[this.buses.length + 1];
+        for(int i = 0; i < this.buses.length; i++) {
+            newBuses[i] = this.buses[i];
+        }
+        newBuses[newBuses.length - 1] = bus;
+        this.buses = newBuses;
+    }
+
     public Car[] getCars() {
         return cars;
     }

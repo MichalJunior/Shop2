@@ -52,4 +52,20 @@ public class Car {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setPlate(String plate) {
+        this.plate = plate;
+    }
 }

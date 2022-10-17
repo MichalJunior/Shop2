@@ -3,6 +3,8 @@ package pl.camp.it.car.rent;
 import pl.camp.it.car.rent.database.UserDB;
 import pl.camp.it.car.rent.database.VehicleDB;
 import pl.camp.it.car.rent.gui.GUI;
+import pl.camp.it.car.rent.model.Bus;
+import pl.camp.it.car.rent.model.Car;
 
 import java.util.Scanner;
 
@@ -24,16 +26,20 @@ public class App {
                 case "2":
                     System.out.println("Plate:");
                     if(vehicleDB.rentVehicle(scanner.nextLine())) {
-                        System.out.println("You have rent this car !!!");
+                        System.out.println("You have rent this vehicle !!!");
                     } else {
                         System.out.println("Rent error !!");
                     }
                     break;
-                case "3":
+                case "4":
                     scanner.close();
                     isWorking = false;
                     break;
-
+                case "3":
+                    if(Authenticator.loggedUser.getRole().equals("ADMIN")) {
+                        GUI.addVehicle(vehicleDB);
+                        break;
+                    }
                 default:
                     System.out.println("Wrong choose !!");
                     break;
