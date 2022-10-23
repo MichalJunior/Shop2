@@ -16,5 +16,21 @@ public class Main {
         System.out.println(hash);
 
         System.out.println(DigestUtils.md5Hex("admin" + Authenticator.seed));
+
+        int x = 5;
+        boolean y;
+        String z;
+        if(x == 5) {
+            y = true;
+            //z = "ABC";
+        } else {
+            y = false;
+            //z = "XYZ";
+        }
+
+        y = x==5;
+
+        y = x==5 ? true : false;
+        z = x==5 ? "ABC" : "XYZ";
     }
 }

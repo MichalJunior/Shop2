@@ -2,10 +2,11 @@ package pl.camp.it.car.rent.database;
 
 import pl.camp.it.car.rent.model.Bus;
 import pl.camp.it.car.rent.model.Car;
+import pl.camp.it.car.rent.model.Motorcycle;
 import pl.camp.it.car.rent.model.Vehicle;
 
 public class VehicleDB {
-    private Vehicle[] vehicles = new Vehicle[7];
+    private Vehicle[] vehicles = new Vehicle[8];
 
     public VehicleDB() {
         this.vehicles[0] = new Car("Audi", "A3",
@@ -23,6 +24,9 @@ public class VehicleDB {
                 2010, "KR66", 500.00, 52);
         this.vehicles[6] = new Bus("Solaris", "3000",
                 2011, "KR77", 550.00, 62);
+
+        this.vehicles[7] = new Motorcycle("Suzuki", "5000",
+                2016, "KR88", 400.00, true);
     }
 
     public boolean rentVehicle(String plate) {

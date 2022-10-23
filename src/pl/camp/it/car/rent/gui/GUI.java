@@ -2,10 +2,7 @@ package pl.camp.it.car.rent.gui;
 
 import pl.camp.it.car.rent.Authenticator;
 import pl.camp.it.car.rent.database.VehicleDB;
-import pl.camp.it.car.rent.model.Bus;
-import pl.camp.it.car.rent.model.Car;
-import pl.camp.it.car.rent.model.User;
-import pl.camp.it.car.rent.model.Vehicle;
+import pl.camp.it.car.rent.model.*;
 
 import java.util.Scanner;
 
@@ -25,9 +22,13 @@ public class GUI {
             String result = currentVehicle.getBrand() + " " +
                     currentVehicle.getModel() + " " +
                     currentVehicle.getPrice() + " ";
+
             if(currentVehicle instanceof Bus) {
                 result = result + ((Bus) currentVehicle).getSeats() + " ";
+            } else if(currentVehicle instanceof Motorcycle) {
+                result = result + ((Motorcycle) currentVehicle).isCart() + " ";
             }
+
             result = result + currentVehicle.getPlate() + " " +
                     currentVehicle.isRent();
             System.out.println(result);
@@ -46,6 +47,7 @@ public class GUI {
         Scanner scanner = new Scanner(System.in);
         System.out.println("1. Car");
         System.out.println("2. Bus");
+        System.out.println("3. Motorcycle");
         String type = scanner.nextLine();
         switch (type) {
             case "1":
@@ -81,6 +83,24 @@ public class GUI {
                 bus.setSeats(Integer.parseInt(scanner.nextLine()));
                 vehicleDB.addVehicle(bus);
                 System.out.println("Bus added !!");
+                break;
+            case "3":
+                Motorcycle motorcycle = new Motorcycle();
+                System.out.println("Brand:");
+                motorcycle.setBrand(scanner.nextLine());
+                System.out.println("Model:");
+                motorcycle.setModel(scanner.nextLine());
+                System.out.println("Year:");
+                motorcycle.setYear(Integer.parseInt(scanner.nextLine()));
+                motorcycle.setRent(false);
+                System.out.println("Plate:");
+                motorcycle.setPlate(scanner.nextLine());
+                System.out.println("Price:");
+                motorcycle.setPrice(Double.parseDouble(scanner.nextLine()));
+                System.out.println("Has cart (y/n):");
+                motorcycle.setCart(scanner.nextLine().equals("y"));
+                vehicleDB.addVehicle(motorcycle);
+                System.out.println("Motorcycle added !!");
                 break;
             default:
                 System.out.println("Wrong choose !!");
