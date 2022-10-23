@@ -68,4 +68,18 @@ public class Vehicle {
     public void setPlate(String plate) {
         this.plate = plate;
     }
+
+    @Override
+    public String toString() {
+        return new StringBuilder().append(this.getBrand())
+                .append(" ")
+                .append(this.getModel())
+                .append(" Cena: ")
+                .append(this.getPrice())
+                .append(" Rejestracja: ")
+                .append(this.getPlate())
+                .append(" Dostepny: ")
+                .append(this.rent ? "Nie" : "Tak")
+                .toString();
+    }
 }

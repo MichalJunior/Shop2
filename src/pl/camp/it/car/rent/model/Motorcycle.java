@@ -19,4 +19,9 @@ public class Motorcycle extends Vehicle {
     public void setCart(boolean cart) {
         this.cart = cart;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Cart: " + (this.cart ? "Tak" : "Nie");
+    }
 }

@@ -18,4 +18,9 @@ public class Bus extends Vehicle {
     public void setSeats(int seats) {
         this.seats = seats;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Miejsca: " + this.seats;
+    }
 }

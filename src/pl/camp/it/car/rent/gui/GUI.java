@@ -20,26 +20,7 @@ public class GUI {
 
     public static void listVehicles(Vehicle[] vehicles) {
         for(Vehicle currentVehicle : vehicles) {
-            StringBuilder sb = new StringBuilder();
-            sb.append(currentVehicle.getBrand())
-                    .append(" ")
-                    .append(currentVehicle.getModel())
-                    .append(" ")
-                    .append(currentVehicle.getPrice())
-                    .append(" ");
-
-            if(currentVehicle instanceof Bus) {
-                sb.append(((Bus) currentVehicle).getSeats())
-                        .append(" ");
-            } else if(currentVehicle instanceof Motorcycle) {
-                sb.append(((Motorcycle) currentVehicle).isCart())
-                        .append(" ");
-            }
-
-            sb.append(currentVehicle.getPlate())
-                    .append(" ")
-                    .append(currentVehicle.isRent());
-            System.out.println(sb.toString());
+            System.out.println(currentVehicle);
         }
     }
 
