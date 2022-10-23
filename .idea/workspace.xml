@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/Authenticator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/Authenticator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/database/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/database/UserDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/Bus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/Motorcycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/Motorcycle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/Vehicle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
