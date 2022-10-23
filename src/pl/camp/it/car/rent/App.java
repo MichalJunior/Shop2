@@ -3,8 +3,6 @@ package pl.camp.it.car.rent;
 import pl.camp.it.car.rent.database.UserDB;
 import pl.camp.it.car.rent.database.VehicleDB;
 import pl.camp.it.car.rent.gui.GUI;
-import pl.camp.it.car.rent.model.Bus;
-import pl.camp.it.car.rent.model.Car;
 
 import java.util.Scanner;
 
@@ -20,8 +18,7 @@ public class App {
 
             switch(scanner.nextLine()) {
                 case "1":
-                    GUI.listCars(vehicleDB.getCars());
-                    GUI.listBuses(vehicleDB.getBuses());
+                    GUI.listVehicles(vehicleDB.getVehicles());
                     break;
                 case "2":
                     System.out.println("Plate:");
