@@ -11,7 +11,7 @@ public class GUI {
     public static void showMenu() {
         System.out.println("1. List vehicles");
         System.out.println("2. Rent vehicle");
-        if(Authenticator.loggedUser.getRole().equals("ADMIN")) {
+        if(Authenticator.loggedUser.getRole() == User.Role.ADMIN) {
             System.out.println("3. Add vehicle");
         }
 

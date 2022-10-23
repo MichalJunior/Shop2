@@ -6,9 +6,9 @@ import pl.camp.it.car.rent.Authenticator;
 public class User {
     private String login;
     private String password;
-    private String role;
+    private Role role;
 
-    public User(String login, String password, String role) {
+    public User(String login, String password, Role role) {
         this(login, password);
         this.role = role;
     }
@@ -37,11 +37,11 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
@@ -54,5 +54,10 @@ public class User {
         return this.login.equals(temp.login) &&
                 this.password.equals(DigestUtils
                         .md5Hex(temp.password + Authenticator.seed));
+    }
+
+    public enum Role {
+        ADMIN,
+        USER
     }
 }

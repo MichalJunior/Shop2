@@ -3,6 +3,7 @@ package pl.camp.it.car.rent;
 import org.apache.commons.codec.digest.DigestUtils;
 import pl.camp.it.car.rent.model.Car;
 import pl.camp.it.car.rent.model.Motorcycle;
+import pl.camp.it.car.rent.model.User;
 import pl.camp.it.car.rent.model.builders.MotorcycleBuilder;
 
 public class Main {
@@ -59,5 +60,8 @@ public class Main {
         System.out.println(motorcycle.getModel());
         System.out.println(motorcycle.getPlate());
         System.out.println(motorcycle.isCart());
+
+        User user = new User();
+        user.setRole(User.Role.USER);
     }
 }
