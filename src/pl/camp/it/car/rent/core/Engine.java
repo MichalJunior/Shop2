@@ -15,9 +15,10 @@ public class Engine {
         Scanner scanner = new Scanner(System.in);
         ProductDB productDB = new ProductDB();
         final UserDB userDB = new UserDB();
-
         GUI.printIntroducing();
-        while (Authenticator.tryAuthenticate(userDB)) {
+        boolean isWorking = Authenticator.tryAuthenticate(userDB);
+
+        while (isWorking) {
             GUI.printMENU();
             switch (scanner.nextInt()) {
                 case 1:
@@ -34,7 +35,7 @@ public class Engine {
                         GUI.printAddingAnnouncement();
                         GUI.printProductsPanel();
                         productDB.addProduct();
-                    }
+                    }else GUI.printWarning();
                     break;
                 }
                 case 4:

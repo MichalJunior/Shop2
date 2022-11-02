@@ -4,34 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/database/ProductDB.java" afterDir="false" />
+    <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="Shop 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/Authenticator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/Authenticator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/database/UserDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/database/UserDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/database/VehicleDB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/gui/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/gui/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/model/Bus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/model/Car.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/model/Motorcycle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/model/Vehicle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/2022.10.15-carRent/pl/camp/it/car/rent/model/builders/MotorcycleBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/ShopAPP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/Authenticator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/Authenticator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/core/Engine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/database/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/database/UserDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/database/VehicleDB.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/Bus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/Car.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/Motorcycle.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/Vehicle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/builders/MotorcycleBuilder.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,6 +223,14 @@
       <option name="presentableId" value="Default" />
       <updated>1665828708144</updated>
     </task>
+    <task id="LOCAL-00001" summary="Shop 2">
+      <created>1667391232612</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667391232612</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -287,6 +275,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Shop 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shop 2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/pl/camp/it/car/rent/gui/Car.java" />

@@ -62,4 +62,10 @@ public class GUI {
         return new User(login, scanner.nextLine());
     }
 
+    public static void printWarning() {
+        System.out.println("--You can not add product not being Admin--");
+    }
+    public static  void printWrongCredentials(){
+        System.out.println("--Wrong credentials,try again --");
+    }
 }

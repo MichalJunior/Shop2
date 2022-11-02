@@ -9,7 +9,8 @@ import java.util.Scanner;
 
 public class Authenticator {
     public static User loggedUser;
-    public static final String seed = "1Tl8*G3Ertpxvj0%8qpy";
+
+    public static final String seed = "GdySieNieMaCoSieLubiToSieLubiCoSieMa";
 
 
     public static boolean tryAuthenticate(UserDB userDB) {
@@ -20,7 +21,7 @@ public class Authenticator {
             if (userFromDB != null && userFromDB.equals(user)) {
                 Authenticator.loggedUser = userFromDB;
                 return true;
-            }
+            } else GUI.printWrongCredentials();
         }
         return false;
     }
