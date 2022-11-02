@@ -1,98 +1,65 @@
 package pl.camp.it.car.rent.gui;
 
-import pl.camp.it.car.rent.Authenticator;
-import pl.camp.it.car.rent.database.VehicleDB;
-import pl.camp.it.car.rent.model.*;
-import pl.camp.it.car.rent.model.builders.MotorcycleBuilder;
+import pl.camp.it.car.rent.database.ProductDB;
+import pl.camp.it.car.rent.model.User;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class GUI {
-    public static void showMenu() {
-        System.out.println("1. List vehicles");
-        System.out.println("2. Rent vehicle");
-        if(Authenticator.loggedUser.getRole() == User.Role.ADMIN) {
-            System.out.println("3. Add vehicle");
-        }
-
-        System.out.println("4. Exit");
+    public static void printIntroducing() {
+        System.out.println("-----------------Welcome in my virtual shop--------------");
     }
 
-    public static void listVehicles(Vehicle[] vehicles) {
-        for(Vehicle currentVehicle : vehicles) {
-            System.out.println(currentVehicle);
-        }
+    public static void printMENU() {
+        System.out.print(" +----------------------------MENU---------------------------+\n1.View list of products\n2.Buy product\n3.Add product\n" +
+                "4.Exit\nInsert your choice:");
+    }
+
+    public static void printProductsPanel() {
+        System.out.print("1.computer\n2.mouse\n3.keyboard\n4.monitor\n5.hardrive\n6.pendrive\nInsert your choice:");
+    }
+
+    public static void printAvailableProducts(HashMap<ProductDB.Product, Integer> availableProducts) {
+        System.out.println("---available products " + availableProducts);
+    }
+
+    public static void printAddingAnnouncement() {
+        System.out.println("-----What product would you add?-----");
+    }
+
+    public static void printAddProductToDB(String product) {
+        System.out.println("+++" + product + " added to shop+++");
+    }
+
+
+    public static void printNothingAdded() {
+        System.out.println("---Nothing added---");
+    }
+
+
+    public static void printBuyAnnouncement() {
+        System.out.println("--- what product would you buy? ---");
+    }
+
+    public static void printSuccessfullyBought(String nameProduct, int quantity, int result) {
+        System.out.println("Successfully Bought " + nameProduct + " x " + quantity + " = " + result + "PLN");
+    }
+
+    public static void askUserForQuantity() {
+        System.out.print("Number of products?:");
+    }
+
+    public static void unsuccessfullyBought() {
+        System.out.println(" -----------  number higher than available,try again ----------- ");
     }
 
     public static User readLoginAndPassword() {
         final Scanner scanner = new Scanner(System.in);
-        System.out.println("Login:");
+        System.out.print("Login:");
         String login = scanner.nextLine();
-        System.out.println("Password:");
+        System.out.print("Password:");
         return new User(login, scanner.nextLine());
     }
 
-    public static void addVehicle(VehicleDB vehicleDB) {
-        final Scanner scanner = new Scanner(System.in);
-        System.out.println("1. Car");
-        System.out.println("2. Bus");
-        System.out.println("3. Motorcycle");
-        String type = scanner.nextLine();
-        switch (type) {
-            case "1":
-                Car car = new Car();
-                System.out.println("Brand:");
-                car.setBrand(scanner.nextLine());
-                System.out.println("Model:");
-                car.setModel(scanner.nextLine());
-                System.out.println("Year:");
-                car.setYear(Integer.parseInt(scanner.nextLine()));
-                car.setRent(false);
-                System.out.println("Plate:");
-                car.setPlate(scanner.nextLine());
-                System.out.println("Price:");
-                car.setPrice(Double.parseDouble(scanner.nextLine()));
-                vehicleDB.addVehicle(car);
-                System.out.println("Car added !!");
-                break;
-            case "2":
-                Bus bus = new Bus();
-                System.out.println("Brand:");
-                bus.setBrand(scanner.nextLine());
-                System.out.println("Model:");
-                bus.setModel(scanner.nextLine());
-                System.out.println("Year:");
-                bus.setYear(Integer.parseInt(scanner.nextLine()));
-                bus.setRent(false);
-                System.out.println("Plate:");
-                bus.setPlate(scanner.nextLine());
-                System.out.println("Price:");
-                bus.setPrice(Double.parseDouble(scanner.nextLine()));
-                System.out.println("Seats:");
-                bus.setSeats(Integer.parseInt(scanner.nextLine()));
-                vehicleDB.addVehicle(bus);
-                System.out.println("Bus added !!");
-                break;
-            case "3":
-                MotorcycleBuilder mb = new MotorcycleBuilder();
-                System.out.println("Brand:");
-                mb.brand(scanner.nextLine());
-                System.out.println("Model:");
-                mb.model(scanner.nextLine());
-                System.out.println("Year:");
-                mb.year(Integer.parseInt(scanner.nextLine()));
-                System.out.println("Plate:");
-                mb.plate(scanner.nextLine());
-                System.out.println("Price:");
-                mb.price(Double.parseDouble(scanner.nextLine()));
-                System.out.println("Has cart (y/n):");
-                mb.cart(scanner.nextLine().equals("y"));
-                vehicleDB.addVehicle(mb.build());
-                System.out.println("Motorcycle added !!");
-                break;
-            default:
-                System.out.println("Wrong choose !!");
-                break;
-        }
-    }
 }

@@ -1,10 +1,6 @@
 package pl.camp.it.car.rent;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import pl.camp.it.car.rent.model.Car;
-import pl.camp.it.car.rent.model.Motorcycle;
-import pl.camp.it.car.rent.model.User;
-import pl.camp.it.car.rent.model.builders.MotorcycleBuilder;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +15,7 @@ public class Main {
         String hash = DigestUtils.md5Hex("janusz");
         System.out.println(hash);
 
-        System.out.println(DigestUtils.md5Hex("admin" + Authenticator.seed));
+        //System.out.println(DigestUtils.md5Hex("admin" + Authenticator.seed));
 
         int x = 5;
         boolean y;
@@ -48,20 +44,11 @@ public class Main {
         result = sb.toString();
         System.out.println(result);
 
-        Car car = new Car();
+
         //car.setModel("asdf").setBrand("akhsdgkj");
 
 
-        Motorcycle motorcycle = new MotorcycleBuilder()
-                .brand("Audi").model("A6").year(2022)
-                .plate("KR99").price(234.34).cart(true).build();
 
-        System.out.println(motorcycle.getBrand());
-        System.out.println(motorcycle.getModel());
-        System.out.println(motorcycle.getPlate());
-        System.out.println(motorcycle.isCart());
 
-        User user = new User();
-        user.setRole(User.Role.USER);
     }
 }
