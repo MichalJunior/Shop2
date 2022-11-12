@@ -1,7 +1,9 @@
 package pl.camp.it.Shop2.database;
 
+import pl.camp.it.Shop2.gui.GUI;
 import pl.camp.it.Shop2.model.User;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +11,6 @@ public class UserDB {
 
 
     private static final List<User> users = new ArrayList<>();
-
 
 
     private static User loggedUser;
@@ -30,6 +31,19 @@ public class UserDB {
 
     public static void setLoggedUser(User loggedUser) {
         UserDB.loggedUser = loggedUser;
+    }
+
+    public static void addUserToDB() {
+        User newUser = GUI.readLoginAndPassword();
+        for (User userOnList : getUsers()) {
+            if (userOnList.equals(newUser)) {
+                System.out.println("  !!!!  this User exists in DataBase  !!!!");
+                addUserToDB();
+            }
+        }
+        System.out.println("----Successfully registered----");
+        newUser.setRole(User.Role.isUser);
+        getUsers().add(newUser);
     }
 
 }

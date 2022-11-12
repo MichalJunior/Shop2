@@ -1,13 +1,13 @@
 package pl.camp.it.Shop2.model;
 
 
-import pl.camp.it.Shop2.Authenticator;
-
 import java.util.Objects;
 
 public class User {
     String login;
     String password;
+
+
     Role role;
 
     public User(String login, String password, Role role) {
@@ -41,6 +41,10 @@ public class User {
     public enum Role {
         isAdmin,
         isUser;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public String getLogin() {

@@ -4,14 +4,20 @@ package pl.camp.it.Shop2.gui;
 import org.apache.commons.codec.digest.DigestUtils;
 import pl.camp.it.Shop2.Authenticator;
 import pl.camp.it.Shop2.database.ProductDB;
+import pl.camp.it.Shop2.database.UserDB;
 import pl.camp.it.Shop2.model.User;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Scanner;
 
 
-
 public class GUI {
+    public static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+
     public static void printIntroducing() {
         System.out.println("-----------------Welcome in my virtual shop--------------");
     }
@@ -64,7 +70,7 @@ public class GUI {
         System.out.print("Login:");
         String login = scanner.nextLine();
         System.out.print("Password:");
-        String password = DigestUtils.md5Hex(scanner.nextLine()+ Authenticator.seed);
+        String password = DigestUtils.md5Hex(scanner.nextLine() + Authenticator.seed);
         return new User(login, password);
     }
 
@@ -75,4 +81,10 @@ public class GUI {
     public static void printWrongCredentials() {
         System.out.println("--Wrong credentials,try again --");
     }
+
+    public static void registerOrLogin() throws IOException {
+        System.out.print("------Would you register or log in?------\n1-register/2-log in :");
+
+    }
 }
+

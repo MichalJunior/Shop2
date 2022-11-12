@@ -4,24 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="Shop Done!">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_15.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/Authenticator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/UserDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="go go power rangers!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shop2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Shop2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/Authenticator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/ShopAPP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/ShopAPP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/core/Engine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/database/ProductDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/ProductDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/database/UserDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/Authenticator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/Authenticator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/core/Engine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/ProductDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/ProductDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/UserDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,17 +183,17 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "E:/IT-CAMP7/zadania/krzysztofS/BMI/BMI",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/IT-CAMP7/zadania/krzysztofS/BMI/BMI&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="pl.camp.it.car.rent.core" />
@@ -257,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667392939820</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="go go power rangers!">
+      <created>1668260775483</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668260775483</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -306,7 +303,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Shop 2" />
     <MESSAGE value="Shop Done!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shop Done!" />
+    <MESSAGE value="go go power rangers!" />
+    <option name="LAST_COMMIT_MESSAGE" value="go go power rangers!" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/pl/camp/it/car/rent/gui/Car.java" />

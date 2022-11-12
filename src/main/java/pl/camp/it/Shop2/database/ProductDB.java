@@ -2,11 +2,11 @@ package pl.camp.it.Shop2.database;
 
 import pl.camp.it.Shop2.gui.GUI;
 
+import java.io.IOException;
 import java.util.*;
 
 public class ProductDB {
-    Scanner scanner = new Scanner(System.in);
-    Scanner scanner2 = new Scanner(System.in);
+
    public HashMap<Product, Integer> availableProducts = new HashMap<>();
 
     public void printListOfAvailableProducts() {
@@ -32,43 +32,43 @@ public class ProductDB {
         availableProducts.clear();
     }
 
-    public void addProduct() {
+    public void addProduct() throws IOException {
 
-        switch (scanner.nextInt()) {
+        switch (GUI.reader.read()) {
             case 1 :{
                 GUI.askUserForQuantity();
-                Product.COMPUTER.quantity += scanner2.nextInt();
+                Product.COMPUTER.quantity += GUI.reader.read();
                 GUI.printAddProductToDB(Product.COMPUTER.name());
                 break;
             }
             case 2 : {
                 GUI.askUserForQuantity();
-                Product.MOUSE.quantity += scanner2.nextInt();
+                Product.MOUSE.quantity += GUI.reader.read();
                 GUI.printAddProductToDB(Product.MOUSE.name());
                 break;
             }
             case 3 : {
                 GUI.askUserForQuantity();
-                Product.KEYBOARD.quantity += scanner2.nextInt();
+                Product.KEYBOARD.quantity += GUI.reader.read();
                 GUI.printAddProductToDB(Product.KEYBOARD.name());
                 break;
             }
             case 4 : {
                 GUI.askUserForQuantity();
-                Product.MONITOR.quantity += scanner2.nextInt();
+                Product.MONITOR.quantity += GUI.reader.read();
                 GUI.printAddProductToDB(Product.MONITOR.name());
                 break;
 
             }
             case 5 : {
                 GUI.askUserForQuantity();
-                Product.HARDRIVE.quantity += scanner2.nextInt();
+                Product.HARDRIVE.quantity += GUI.reader.read();
                 GUI.printAddProductToDB(Product.HARDRIVE.name());
                 break;
             }
             case 6 : {
                 GUI.askUserForQuantity();
-                Product.PENDRIVE.quantity += scanner2.nextInt();
+                Product.PENDRIVE.quantity +=GUI.reader.read();
                 GUI.printAddProductToDB(Product.PENDRIVE.name());
                 break;
             }
@@ -76,10 +76,10 @@ public class ProductDB {
         }
     }
 
-    public void buyProduct() {
+    public void buyProduct() throws IOException {
         Scanner scanner2 = new Scanner(System.in);
 
-        switch (scanner.nextInt()) {
+        switch (GUI.reader.read()) {
             case 1 : {
                 GUI.askUserForQuantity();
                 int chosenQuantity = scanner2.nextInt();

@@ -11,14 +11,15 @@ public class Authenticator {
     public static final String seed = "GdySieNieMaCoSieLubiToSieLubiCoSieMa";
 
 
-    public static boolean tryAuthenticate(User user) {
+    public static boolean tryAuthenticate() {
+        User newUser = GUI.readLoginAndPassword();
         for (User userOnList : UserDB.getUsers()) {
-            if (userOnList.equals(user)) {
+            if (userOnList.equals(newUser)) {
                 UserDB.setLoggedUser(userOnList);
                 return true;
             }
         }
         GUI.printWrongCredentials();
-        return tryAuthenticate(GUI.readLoginAndPassword());
+        return tryAuthenticate();
     }
 }
