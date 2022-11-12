@@ -34,39 +34,39 @@ public class ProductDB {
 
     public void addProduct() throws IOException {
 
-        switch (GUI.reader.read()) {
-            case 1 :{
+        switch (GUI.reader.readLine()) {
+            case "1" :{
                 GUI.askUserForQuantity();
                 Product.COMPUTER.quantity += GUI.reader.read();
                 GUI.printAddProductToDB(Product.COMPUTER.name());
                 break;
             }
-            case 2 : {
+            case "2" : {
                 GUI.askUserForQuantity();
                 Product.MOUSE.quantity += GUI.reader.read();
                 GUI.printAddProductToDB(Product.MOUSE.name());
                 break;
             }
-            case 3 : {
+            case "3" : {
                 GUI.askUserForQuantity();
                 Product.KEYBOARD.quantity += GUI.reader.read();
                 GUI.printAddProductToDB(Product.KEYBOARD.name());
                 break;
             }
-            case 4 : {
+            case "4" : {
                 GUI.askUserForQuantity();
                 Product.MONITOR.quantity += GUI.reader.read();
                 GUI.printAddProductToDB(Product.MONITOR.name());
                 break;
 
             }
-            case 5 : {
+            case "5" : {
                 GUI.askUserForQuantity();
                 Product.HARDRIVE.quantity += GUI.reader.read();
                 GUI.printAddProductToDB(Product.HARDRIVE.name());
                 break;
             }
-            case 6 : {
+            case "6" : {
                 GUI.askUserForQuantity();
                 Product.PENDRIVE.quantity +=GUI.reader.read();
                 GUI.printAddProductToDB(Product.PENDRIVE.name());
@@ -79,8 +79,8 @@ public class ProductDB {
     public void buyProduct() throws IOException {
         Scanner scanner2 = new Scanner(System.in);
 
-        switch (GUI.reader.read()) {
-            case 1 : {
+        switch (GUI.reader.readLine()) {
+            case "1" : {
                 GUI.askUserForQuantity();
                 int chosenQuantity = scanner2.nextInt();
                 if (chosenQuantity <= Product.COMPUTER.quantity) {
@@ -89,7 +89,7 @@ public class ProductDB {
                 } else GUI.unsuccessfullyBought();
                 break;
             }
-            case 2 : {
+            case "2" : {
                 GUI.askUserForQuantity();
                 int chosenQuantity = scanner2.nextInt();
                 if (chosenQuantity <= Product.MOUSE.quantity) {
@@ -98,7 +98,7 @@ public class ProductDB {
                 } else GUI.unsuccessfullyBought();
                 break;
             }
-            case 3 : {
+            case "3" : {
                 GUI.askUserForQuantity();
                 int chosenQuantity = scanner2.nextInt();
                 if (chosenQuantity <= Product.KEYBOARD.quantity) {
@@ -107,7 +107,7 @@ public class ProductDB {
                 } else GUI.unsuccessfullyBought();
                 break;
             }
-            case 4 : {
+            case "4" : {
                 GUI.askUserForQuantity();
                 int chosenQuantity = scanner2.nextInt();
                 if (chosenQuantity <= Product.MONITOR.quantity) {
@@ -116,7 +116,7 @@ public class ProductDB {
                 } else GUI.unsuccessfullyBought();
                 break;
             }
-            case 5 : {
+            case "5" : {
                 GUI.askUserForQuantity();
                 int chosenQuantity = scanner2.nextInt();
                 if (chosenQuantity <= Product.HARDRIVE.quantity) {
@@ -125,7 +125,7 @@ public class ProductDB {
                 } else GUI.unsuccessfullyBought();
                 break;
             }
-            case 6 : {
+            case "6" : {
                 GUI.askUserForQuantity();
                 int chosenQuantity = scanner2.nextInt();
                 if (chosenQuantity <= Product.PENDRIVE.quantity) {

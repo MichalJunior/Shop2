@@ -5,6 +5,9 @@ import java.util.Objects;
 
 public class User {
     String login;
+
+
+
     String password;
 
 
@@ -49,5 +52,9 @@ public class User {
 
     public String getLogin() {
         return login;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

@@ -23,8 +23,12 @@ public class GUI {
     }
 
     public static void printMENU() {
-        System.out.print(" +----------------------------MENU---------------------------+\n1.View list of products\n2.Buy product\n3.Add product\n" +
-                "4.Exit\nInsert your choice:");
+        System.out.println(" +----------------------------MENU---------------------------+\n1.View list of products\n2.Buy product\n3.Add product\n" +
+                "4.Exit");
+        if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {
+            System.out.println("5. * Make User Admin *");
+        }
+        System.out.print("Insert your choice:");
     }
 
     public static void printProductsPanel() {

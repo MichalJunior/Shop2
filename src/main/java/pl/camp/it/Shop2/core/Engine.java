@@ -27,10 +27,10 @@ public class Engine {
             while (flag) {
                 GUI.printIntroducing();
                 GUI.registerOrLogin();
+
                 switch (scanner.nextInt()) {
                     case 1:
                         UserDB.addUserToDB();
-                      //  System.out.println(Arrays.toString(UserDB.getUsers().toArray()));
                         break;
                     case 2: {
                         successfulLogged = Authenticator.tryAuthenticate();
@@ -42,10 +42,11 @@ public class Engine {
                 }
             }
 
-
             while (successfulLogged) {
                 GUI.printMENU();
+
                 switch (scanner.nextInt()) {
+
                     case 1:
                         productDB.printListOfAvailableProducts();
                         break;
@@ -66,6 +67,15 @@ public class Engine {
                     case 4:
                         System.exit(0);
                         break;
+                    case 5: {
+                        if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {
+                            userDB.makeUserAdmin();
+                            for (User user : UserDB.getUsers()) {
+                                System.out.println("login:" + user.getLogin() + " password " + user.getPassword() + " role " + user.getRole());
+                            }
+                        } else System.out.println(" *** YOU ARE NOT ADMIN ***");
+
+                    }
                 }
             }
         } catch (IOException e) {
