@@ -4,14 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="Shop 2">
+    <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="Shop Done!">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/Authenticator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/UserDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/Authenticator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/Authenticator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/core/Engine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/database/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/database/UserDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shop2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Shop2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/Authenticator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/ShopAPP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/ShopAPP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/core/Engine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/database/ProductDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/ProductDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/database/UserDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/camp/it/car/rent/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +68,13 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="132" />
@@ -176,14 +193,17 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;E:/IT-CAMP7/zadania/krzysztofS/BMI/BMI&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "E:/IT-CAMP7/zadania/krzysztofS/BMI/BMI",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="pl.camp.it.car.rent.core" />
@@ -198,7 +218,7 @@
       </method>
     </configuration>
     <configuration name="ShopAPP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pl.camp.it.car.rent.ShopAPP" />
+      <option name="MAIN_CLASS_NAME" value="pl.camp.it.Shop2.ShopAPP" />
       <module name="Shop2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -230,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667391232612</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Shop Done!">
+      <created>1667392939820</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667392939820</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -278,7 +305,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Shop 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shop 2" />
+    <MESSAGE value="Shop Done!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shop Done!" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/pl/camp/it/car/rent/gui/Car.java" />

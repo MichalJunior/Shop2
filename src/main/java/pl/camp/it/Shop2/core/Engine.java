@@ -1,12 +1,12 @@
-package pl.camp.it.car.rent.core;
+package pl.camp.it.Shop2.core;
 
 import java.util.Scanner;
 
-import pl.camp.it.car.rent.Authenticator;
-import pl.camp.it.car.rent.database.ProductDB;
-import pl.camp.it.car.rent.database.UserDB;
-import pl.camp.it.car.rent.gui.GUI;
-import pl.camp.it.car.rent.model.User;
+import pl.camp.it.Shop2.Authenticator;
+import pl.camp.it.Shop2.database.ProductDB;
+import pl.camp.it.Shop2.database.UserDB;
+import pl.camp.it.Shop2.gui.GUI;
+import pl.camp.it.Shop2.model.User;
 
 
 public class Engine {
@@ -16,7 +16,7 @@ public class Engine {
         ProductDB productDB = new ProductDB();
         final UserDB userDB = new UserDB();
         GUI.printIntroducing();
-        boolean isWorking = Authenticator.tryAuthenticate(userDB);
+        boolean isWorking = Authenticator.tryAuthenticate(GUI.readLoginAndPassword());
 
         while (isWorking) {
             GUI.printMENU();
@@ -31,11 +31,11 @@ public class Engine {
                     break;
                 }
                 case 3: {
-                    if (Authenticator.loggedUser.getRole() == User.Role.isAdmin) {
+                    if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {
                         GUI.printAddingAnnouncement();
                         GUI.printProductsPanel();
                         productDB.addProduct();
-                    }else GUI.printWarning();
+                    } else GUI.printWarning();
                     break;
                 }
                 case 4:

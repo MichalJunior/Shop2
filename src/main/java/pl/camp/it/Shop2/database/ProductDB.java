@@ -1,6 +1,6 @@
-package pl.camp.it.car.rent.database;
+package pl.camp.it.Shop2.database;
 
-import pl.camp.it.car.rent.gui.GUI;
+import pl.camp.it.Shop2.gui.GUI;
 
 import java.util.*;
 

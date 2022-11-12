@@ -1,10 +1,15 @@
-package pl.camp.it.car.rent.gui;
+package pl.camp.it.Shop2.gui;
 
-import pl.camp.it.car.rent.database.ProductDB;
-import pl.camp.it.car.rent.model.User;
+
+import org.apache.commons.codec.digest.DigestUtils;
+import pl.camp.it.Shop2.Authenticator;
+import pl.camp.it.Shop2.database.ProductDB;
+import pl.camp.it.Shop2.model.User;
 
 import java.util.HashMap;
 import java.util.Scanner;
+
+
 
 public class GUI {
     public static void printIntroducing() {
@@ -59,13 +64,15 @@ public class GUI {
         System.out.print("Login:");
         String login = scanner.nextLine();
         System.out.print("Password:");
-        return new User(login, scanner.nextLine());
+        String password = DigestUtils.md5Hex(scanner.nextLine()+ Authenticator.seed);
+        return new User(login, password);
     }
 
     public static void printWarning() {
         System.out.println("--You can not add product not being Admin--");
     }
-    public static  void printWrongCredentials(){
+
+    public static void printWrongCredentials() {
         System.out.println("--Wrong credentials,try again --");
     }
 }
