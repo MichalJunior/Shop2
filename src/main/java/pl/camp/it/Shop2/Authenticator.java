@@ -5,21 +5,21 @@ import pl.camp.it.Shop2.database.UserDB;
 import pl.camp.it.Shop2.gui.GUI;
 import pl.camp.it.Shop2.model.User;
 
+import java.io.IOException;
+
 public class Authenticator {
 
+    private final GUI gui = new GUI();
 
-    public static final String seed = "GdySieNieMaCoSieLubiToSieLubiCoSieMa";
-
-
-    public static boolean tryAuthenticate() {
-        User newUser = GUI.readLoginAndPassword();
+    public boolean tryAuthenticate() throws IOException {
+        User newUser = gui.readLoginAndPassword();
         for (User userOnList : UserDB.getUsers()) {
             if (userOnList.equals(newUser)) {
                 UserDB.setLoggedUser(userOnList);
                 return true;
             }
         }
-        GUI.printWrongCredentials();
+        gui.printWrongCredentials();
         return tryAuthenticate();
     }
 }

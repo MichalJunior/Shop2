@@ -1,6 +1,5 @@
 package pl.camp.it.Shop2.database;
 
-import pl.camp.it.Shop2.Authenticator;
 import pl.camp.it.Shop2.gui.GUI;
 import pl.camp.it.Shop2.model.User;
 
@@ -12,6 +11,7 @@ public class UserDB {
 
 
     private static final List<User> users = new ArrayList<>();
+    private final GUI gui = new GUI();
 
 
     private static User loggedUser;
@@ -23,8 +23,8 @@ public class UserDB {
         users.add(new User("michal", "ece2c66cf415af02fcf4f6449ca2ad1c", User.Role.isUser));
     }
 
-    public static void addUserToDB() {
-        User newUser = GUI.readLoginAndPassword();
+    public void addUserToDB() throws IOException {
+        User newUser = gui.readLoginAndPassword();
         for (User userOnList : getUsers()) {
             if (userOnList.equals(newUser)) {
                 System.out.println("  !!!!  this User exists in DataBase  !!!!");
@@ -36,8 +36,8 @@ public class UserDB {
         getUsers().add(newUser);
     }
 
-    public void makeUserAdmin() {
-        User newUser = GUI.readLoginAndPassword();
+    public void makeUserAdmin() throws IOException {
+        User newUser = gui.readLoginAndPassword();
         boolean flag = false;
         for (User userOnList : UserDB.getUsers()) {
             if (userOnList.equals(newUser)) {
@@ -47,9 +47,9 @@ public class UserDB {
         }
         if (flag) {
             newUser.setRole(User.Role.isAdmin);
-            System.out.println("Successfully set User Admin ");
+            System.out.println("*** Successfully set User Admin ***");
 
-        }else {
+        } else {
             System.out.println("---That used does not exist in Data Base,try again---");
             makeUserAdmin();
         }

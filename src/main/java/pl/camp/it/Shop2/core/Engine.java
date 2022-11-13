@@ -1,12 +1,9 @@
 package pl.camp.it.Shop2.core;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Scanner;
 
 import pl.camp.it.Shop2.Authenticator;
+import pl.camp.it.Shop2.OptionsProvider;
 import pl.camp.it.Shop2.database.ProductDB;
 import pl.camp.it.Shop2.database.UserDB;
 import pl.camp.it.Shop2.gui.GUI;
@@ -16,24 +13,26 @@ import pl.camp.it.Shop2.model.User;
 public class Engine {
     public static void start() {
         try {
-            // BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            Scanner scanner = new Scanner(System.in);
             ProductDB productDB = new ProductDB();
+            Authenticator authenticator = new Authenticator();
             final UserDB userDB = new UserDB();
+            OptionsProvider optionsProvider = new OptionsProvider();
+            GUI gui = new GUI();
 
             boolean successfulLogged = false;
 
             boolean flag = true;
             while (flag) {
-                GUI.printIntroducing();
-                GUI.registerOrLogin();
+                gui.printIntroducing();
+                char choice = gui.registerOrLogin();
 
-                switch (scanner.nextInt()) {
-                    case 1:
-                        UserDB.addUserToDB();
+                switch (choice) {
+                    case '1':
+                        userDB.addUserToDB();
                         break;
-                    case 2: {
-                        successfulLogged = Authenticator.tryAuthenticate();
+                    case '2': {
+
+                        successfulLogged = authenticator.tryAuthenticate();
                         flag = false;
                         break;
                     }
@@ -43,41 +42,37 @@ public class Engine {
             }
 
             while (successfulLogged) {
-                GUI.printMENU();
+                gui.printMENU();
 
-                switch (scanner.nextInt()) {
-
-                    case 1:
-                        productDB.printListOfAvailableProducts();
-                        break;
-                    case 2: {
-                        GUI.printBuyAnnouncement();
-                        GUI.printProductsPanel();
+                switch (optionsProvider.readChar("Insert your choice:")) {
+                    case '1' -> productDB.printListOfAvailableProducts();//Products metod show list
+                    case '2' -> {
+                        gui.printBuyAnnouncement(); // products buy product
+                        gui.printProductsPanel();
                         productDB.buyProduct();
-                        break;
                     }
-                    case 3: {
-                        if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {
-                            GUI.printAddingAnnouncement();
-                            GUI.printProductsPanel();
-                            productDB.addProduct();
-                        } else GUI.printWarning();
-                        break;
-                    }
-                    case 4:
+                    case '3' -> {
+                        System.out.println("           ***  Thanks for visiting my shop  *** :)");
                         System.exit(0);
-                        break;
-                    case 5: {
-                        if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {
+                    }
+                    case '4' -> {
+                        if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {  //Productrs addproductby admin
+                            gui.printAddingAnnouncement();
+                            gui.printProductsPanel();
+                            productDB.addProduct();
+                        } else gui.printAdminWarning();
+                    }
+                    case '5' -> {
+                        if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {  //Administration addAdminRights
                             userDB.makeUserAdmin();
-                            for (User user : UserDB.getUsers()) {
-                                System.out.println("login:" + user.getLogin() + " password " + user.getPassword() + " role " + user.getRole());
-                            }
-                        } else System.out.println(" *** YOU ARE NOT ADMIN ***");
-
+                            //   for (User user : UserDB.getUsers()) {
+                            //      System.out.println("login:" + user.getLogin() + " password " + user.getPassword() + " role " + user.getRole());
+                            //  }
+                        } else gui.printAdminWarning();
                     }
                 }
             }
+
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

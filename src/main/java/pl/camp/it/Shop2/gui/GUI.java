@@ -3,6 +3,7 @@ package pl.camp.it.Shop2.gui;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import pl.camp.it.Shop2.Authenticator;
+import pl.camp.it.Shop2.OptionsProvider;
 import pl.camp.it.Shop2.database.ProductDB;
 import pl.camp.it.Shop2.database.UserDB;
 import pl.camp.it.Shop2.model.User;
@@ -11,84 +12,89 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.Scanner;
 
 
 public class GUI {
-    public static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private static final OptionsProvider optionsProvider = new OptionsProvider();
+    private static final String seed = "GdySieNieMaCoSieLubiToSieLubiCoSieMa";
 
+    public User readLoginAndPassword() throws IOException {
 
-    public static void printIntroducing() {
+        System.out.print("Login:");
+        String login = optionsProvider.readString();
+        System.out.print("Password:");
+        String password = DigestUtils.md5Hex(optionsProvider.readString() + seed);
+        return new User(login, password);
+    }
+
+    public void printIntroducing() {
         System.out.println("-----------------Welcome in my virtual shop--------------");
     }
 
-    public static void printMENU() {
-        System.out.println(" +----------------------------MENU---------------------------+\n1.View list of products\n2.Buy product\n3.Add product\n" +
-                "4.Exit");
+    public void printMENU() {
+        System.out.println(" +----------------------------MENU---------------------------+\n1.View list of products");
+        if (UserDB.getLoggedUser().getRole() == User.Role.isUser) {
+            System.out.println("2.Buy product");
+        }
+        System.out.println("3.Exit");
         if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {
+            System.out.println("4. * Add product * ");
             System.out.println("5. * Make User Admin *");
         }
-        System.out.print("Insert your choice:");
     }
 
-    public static void printProductsPanel() {
-        System.out.print("1.computer\n2.mouse\n3.keyboard\n4.monitor\n5.hardrive\n6.pendrive\nInsert your choice:");
+    public void printProductsPanel() {
+        System.out.println("1.computer\n2.mouse\n3.keyboard\n4.monitor\n5.hardrive\n6.pendrive");
     }
 
-    public static void printAvailableProducts(HashMap<ProductDB.Product, Integer> availableProducts) {
+    public void printAvailableProducts(HashMap<ProductDB.Product, Integer> availableProducts) {
         System.out.println("---available products " + availableProducts);
     }
 
-    public static void printAddingAnnouncement() {
+    public void printAddingAnnouncement() {
         System.out.println("-----What product would you add?-----");
     }
 
-    public static void printAddProductToDB(String product) {
+    public void printAddProductToDB(String product) {
         System.out.println("+++" + product + " added to shop+++");
     }
 
 
-    public static void printNothingAdded() {
+    public void printNothingAdded() {
         System.out.println("---Nothing added---");
     }
 
 
-    public static void printBuyAnnouncement() {
-        System.out.println("--- what product would you buy? ---");
+    public void printBuyAnnouncement() {
+        if (UserDB.getLoggedUser().getRole() == (User.Role.isAdmin)) {
+            System.out.println("***    PO CO KUPUJESZ WŁASNY TOWAR BARANIE???    ***");
+        } else System.out.println("--- what product would you buy? ---");
+
     }
 
-    public static void printSuccessfullyBought(String nameProduct, int quantity, int result) {
+    public void printSuccessfullyBought(String nameProduct, int quantity, int result) {
         System.out.println("Successfully Bought " + nameProduct + " x " + quantity + " = " + result + "PLN");
     }
 
-    public static void askUserForQuantity() {
+    public void askUserForQuantity() {
         System.out.print("Number of products?:");
     }
 
-    public static void unsuccessfullyBought() {
+    public void unsuccessfullyBought() {
         System.out.println(" -----------  number higher than available,try again ----------- ");
     }
 
-    public static User readLoginAndPassword() {
-        final Scanner scanner = new Scanner(System.in);
-        System.out.print("Login:");
-        String login = scanner.nextLine();
-        System.out.print("Password:");
-        String password = DigestUtils.md5Hex(scanner.nextLine() + Authenticator.seed);
-        return new User(login, password);
+
+    public void printAdminWarning() {
+        System.out.println(" *** YOU ARE NOT ADMIN ***");
     }
 
-    public static void printWarning() {
-        System.out.println("--You can not add product not being Admin--");
-    }
-
-    public static void printWrongCredentials() {
+    public void printWrongCredentials() {
         System.out.println("--Wrong credentials,try again --");
     }
 
-    public static void registerOrLogin() throws IOException {
-        System.out.print("------Would you register or log in?------\n1-register/2-log in :");
-
+    public char registerOrLogin() throws IOException {
+        return optionsProvider.readChar("------Would you register or log in?------\n1-register/2-log in :");
     }
 }
 
