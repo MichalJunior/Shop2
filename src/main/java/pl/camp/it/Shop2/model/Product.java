@@ -25,13 +25,15 @@ public class Product {
     private int quantity;
 
 
+
     public Product(int prize, int keyProduct, int quantity, String name) {
         this.prize = prize;
         this.keyProduct = keyProduct;
         this.quantity = quantity;
         this.name = name;
-
     }
 
-
+    public int getKeyProduct() {
+        return keyProduct;
+    }
 }

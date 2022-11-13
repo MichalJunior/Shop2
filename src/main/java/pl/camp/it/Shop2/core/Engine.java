@@ -3,6 +3,7 @@ package pl.camp.it.Shop2.core;
 import java.io.IOException;
 
 import pl.camp.it.Shop2.Authenticator;
+import pl.camp.it.Shop2.Editor.FileEdytor;
 import pl.camp.it.Shop2.OptionsProvider;
 import pl.camp.it.Shop2.database.ProductDB;
 import pl.camp.it.Shop2.database.UserDB;
@@ -18,6 +19,7 @@ public class Engine {
             final UserDB userDB = new UserDB();
             OptionsProvider optionsProvider = new OptionsProvider();
             GUI gui = new GUI();
+            FileEdytor fileEdytor= new FileEdytor();
 
             boolean successfulLogged = false;
 
@@ -53,6 +55,7 @@ public class Engine {
                     }
                     case '3' -> {
                         System.out.println("           ***  Thanks for visiting my shop  *** :)");
+                        fileEdytor.persistToFile();
                         System.exit(0);
                     }
                     case '4' -> {
