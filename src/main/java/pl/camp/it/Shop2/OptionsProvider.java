@@ -9,23 +9,18 @@ public class OptionsProvider {
         System.out.print(message);
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-
-        char readChared = (char) bufferedReader.read();
-        return readChared;
+        return (char) bufferedReader.read();
     }
 
     public String readString() throws IOException {
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-        String readedString = bufferedReader.readLine();
-
-        return readedString;
+        return bufferedReader.readLine();
     }
+
     public int readInt() throws IOException {
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         return Integer.parseInt(bufferedReader.readLine());
-
     }
-
 }

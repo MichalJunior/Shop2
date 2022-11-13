@@ -13,9 +13,7 @@ public class UserDB {
     private static final List<User> users = new ArrayList<>();
     private final GUI gui = new GUI();
 
-
     private static User loggedUser;
-
 
     public UserDB() {
         users.add(new User("admin", "c8d76e034ae1dbf3548d6eca3f1a08bd", User.Role.isAdmin));

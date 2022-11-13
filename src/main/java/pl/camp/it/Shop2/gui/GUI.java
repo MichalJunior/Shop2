@@ -12,6 +12,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class GUI {
@@ -47,7 +48,7 @@ public class GUI {
         System.out.println("1.computer\n2.mouse\n3.keyboard\n4.monitor\n5.hardrive\n6.pendrive");
     }
 
-    public void printAvailableProducts(HashMap<ProductDB.Product, Integer> availableProducts) {
+    public void printAvailableProducts(List<String> availableProducts) {
         System.out.println("---available products " + availableProducts);
     }
 

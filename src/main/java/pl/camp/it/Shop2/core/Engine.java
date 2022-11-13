@@ -40,7 +40,7 @@ public class Engine {
                         System.out.println("wrong choice");
                 }
             }
-
+            productDB.listOfProducts();
             while (successfulLogged) {
                 gui.printMENU();
 
