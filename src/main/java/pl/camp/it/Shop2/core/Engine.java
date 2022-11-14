@@ -21,62 +21,51 @@ public class Engine {
             GUI gui = new GUI();
             FileEdytor fileEdytor = new FileEdytor();
 
-
             boolean successfulLogged = false;
-        //    productDB.listOfProducts();
             boolean flag = true;
             fileEdytor.readFile();
-
+            //        ***    !!!!!           Admin login and password:admin / Usual user login and password :michal             !!!
             while (flag) {
                 gui.printIntroducing();
                 char choice = gui.registerOrLogin();
-
                 switch (choice) {
-                    case '1':
-                        userDB.addUserToDB();
-                        break;
-                    case '2': {
-
+                    case '1' -> userDB.addUserToDB();
+                    case '2' -> {
                         successfulLogged = authenticator.tryAuthenticate();
                         flag = false;
-                        break;
                     }
-                    default:
-                        System.out.println("wrong choice");
+                    default -> System.out.println("wrong choice");
                 }
             }
-
             while (successfulLogged) {
                 gui.printMENU();
 
                 switch (optionsProvider.readChar("Insert your choice:")) {
-                    case '1' -> productDB.printListOfAvailableProducts();//Products metod show list
+                    case '1' -> productDB.printListOfAvailableProducts();
                     case '2' -> {
-                        gui.printBuyAnnouncement(); // products buy product
+                        gui.printBuyAnnouncement();
                         gui.printProductsPanel();
                         productDB.buyProduct();
                     }
                     case '3' -> {
-                        System.out.println("           ***  Thanks for visiting my shop  *** :)");
-                        fileEdytor.persistToFileProductsAndUsers(productDB.getShopProductList(),UserDB.getUsers());
-
+                        gui.printEnd();
+                        fileEdytor.persistToFileProductsAndUsers(ProductDB.getShopProductList(), UserDB.getUsers());
                         System.exit(0);
                     }
                     case '4' -> {
-                        if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {  //Productrs addproductby admin
+                        if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {
                             gui.printAddingAnnouncement();
                             gui.printProductsPanel();
                             productDB.addProduct();
                         } else gui.printAdminWarning();
                     }
                     case '5' -> {
-                        if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {  //Administration addAdminRights
+                        if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {
                             userDB.makeUserAdmin();
                         } else gui.printAdminWarning();
                     }
                 }
             }
-
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

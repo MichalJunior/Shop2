@@ -10,32 +10,12 @@ import java.util.*;
 public class ProductDB {
     private final GUI gui = new GUI();
     private final OptionsProvider optionsProvider = new OptionsProvider();
-
-
     private static final List<Product> shopProductList = new ArrayList<>();
-
     List<String> availableProducts = new ArrayList<>();
-
 
     public static List<Product> getShopProductList() {
         return shopProductList;
     }
-
-    //   Product computer = new Computer(5000, 122, 3, "computer");
-//     Product monitor = new Monitor(300, 123, 6, "monitor");
-//     Product mouse = new Mouse(300, 124, 50, "mouse");
-//     Product keyboard = new Keyboard(600, 125, 11332, "keyboard");
-//      Product hardrive = new Hardrive(800, 126, 4, "hardrive");
-//      Product pendrive = new Pendrive(30, 127, 10, "pendrive");
-//
-//       public void listOfProducts() {
-//        shopProductList.add(computer);
-//        shopProductList.add(monitor);
-//        shopProductList.add(mouse);
-//        shopProductList.add(keyboard);
-//        shopProductList.add(hardrive);
-//        shopProductList.add(pendrive);
-//       }
 
     public void printListOfAvailableProducts() {
 
@@ -144,11 +124,9 @@ public class ProductDB {
                     gui.printSuccessfullyBought(shopProductList.get(5).getName(), chosenQuantity, chosenQuantity * shopProductList.get(5).getPrize());
                 } else gui.unsuccessfullyBought();
             }
-
             default -> System.out.println("--Wrong credentials--");
         }
     }
-
 }
 
 

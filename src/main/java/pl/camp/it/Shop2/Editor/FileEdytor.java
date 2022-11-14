@@ -11,7 +11,6 @@ import java.util.List;
 public class FileEdytor {
 
     private String DATABASE_FILE = "bd.txt";
-    ProductDB productDB = new ProductDB();
 
     public void readFile() {
         try {
@@ -55,8 +54,6 @@ public class FileEdytor {
 
     public void persistToFileProductsAndUsers(List<Product> productList, List<User> userList) {
         try {
-
-
             BufferedWriter writer = new BufferedWriter(new FileWriter(DATABASE_FILE));
             writer.write(convertProductToData(productList.get(0)));
 
@@ -65,8 +62,6 @@ public class FileEdytor {
                 writer.write(convertProductToData(productList.get(i)));
                 writer.flush();
             }
-
-
             writer.newLine();
             writer.write(convertUserToData(userList.get(0)));
             for (int j = 1; j < userList.size(); j++) {

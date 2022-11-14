@@ -97,5 +97,8 @@ public class GUI {
     public char registerOrLogin() throws IOException {
         return optionsProvider.readChar("------Would you register or log in?------\n1-register/2-log in :");
     }
+    public void printEnd() {
+        System.out.println(" ***  Thanks for visiting my shop  *** :)");
+    }
 }
 
