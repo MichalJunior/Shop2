@@ -21,6 +21,7 @@ public class UserDB {
         users.add(new User("michal", "ece2c66cf415af02fcf4f6449ca2ad1c", User.Role.isUser));
     }
 
+
     public void addUserToDB() throws IOException {
         User newUser = gui.readLoginAndPassword();
         for (User userOnList : getUsers()) {
@@ -37,7 +38,7 @@ public class UserDB {
     public void makeUserAdmin() throws IOException {
         User newUser = gui.readLoginAndPassword();
         boolean flag = false;
-        for (User userOnList : UserDB.getUsers()) {
+        for (User userOnList : getUsers()) {
             if (userOnList.equals(newUser)) {
                 newUser = userOnList;
                 flag = true;

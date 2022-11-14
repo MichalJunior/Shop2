@@ -10,6 +10,7 @@ import java.io.IOException;
 public class Authenticator {
 
     private final GUI gui = new GUI();
+  // UserDB userDB = new UserDB();
 
     public boolean tryAuthenticate() throws IOException {
         User newUser = gui.readLoginAndPassword();

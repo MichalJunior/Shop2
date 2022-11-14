@@ -16,10 +16,11 @@ public class Engine {
         try {
             ProductDB productDB = new ProductDB();
             Authenticator authenticator = new Authenticator();
-            final UserDB userDB = new UserDB();
+            UserDB userDB = new UserDB();
             OptionsProvider optionsProvider = new OptionsProvider();
             GUI gui = new GUI();
-            FileEdytor fileEdytor= new FileEdytor();
+            FileEdytor fileEdytor = new FileEdytor();
+
 
             boolean successfulLogged = false;
 
@@ -55,7 +56,8 @@ public class Engine {
                     }
                     case '3' -> {
                         System.out.println("           ***  Thanks for visiting my shop  *** :)");
-                        fileEdytor.persistToFile();
+                        fileEdytor.persistToFileProductsAndUsers(productDB.getShopProductList(),UserDB.getUsers());
+
                         System.exit(0);
                     }
                     case '4' -> {

@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="Oezu..refector!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/Editor/FileEdytor.java" afterDir="false" />
+    <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="Persisting to file :)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/Authenticator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/Authenticator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/Editor/FileEdytor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/Editor/FileEdytor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/core/Engine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/ProductDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/ProductDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/UserDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/core/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/core/Engine.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/database/ProductDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/database/ProductDB.class" afterDir="false" />
     </list>
@@ -294,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668376043844</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Persisting to file :)">
+      <created>1668380286061</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1668380286061</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -349,7 +357,8 @@
     <MESSAGE value="Chyba enum nie służy do tego jak go użyłem (ale da się tak :)" />
     <MESSAGE value="static to zło!!!,mały refactor!" />
     <MESSAGE value="Oezu..refector!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Oezu..refector!" />
+    <MESSAGE value="Persisting to file :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Persisting to file :)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

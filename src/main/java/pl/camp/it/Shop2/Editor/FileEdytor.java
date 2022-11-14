@@ -1,28 +1,32 @@
 package pl.camp.it.Shop2.Editor;
 
-import pl.camp.it.Shop2.database.ProductDB;
+import pl.camp.it.Shop2.database.UserDB;
 import pl.camp.it.Shop2.model.Product;
+import pl.camp.it.Shop2.model.User;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 
 public class FileEdytor {
 
-
-    ProductDB productDB = new ProductDB();
-
-
     private String DATABASE_FILE = "bd.txt";
 
-    public void persistToFile() {
+    public void persistToFileProductsAndUsers(List<Product> productList, List<User> userList) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(DATABASE_FILE));
 
-           writer.write(convertToData(productDB.getShopProductList().get(0)));
-            for (int i = 1; i < productDB.getShopProductList().size(); i++) {
+            for (int i = 0; i < productList.size(); i++) {
                 writer.newLine();
-                writer.write(convertToData(productDB.getShopProductList().get(i)));
+                writer.write(convertProductToData(productList.get(i)));
+                writer.flush();
+            }
+            writer.newLine();
+            writer.write(convertUserToData(userList.get(0)));
+            for (int j = 1; j < userList.size(); j++) {
+                writer.newLine();
+                writer.write(convertUserToData(userList.get(j)));
                 writer.flush();
             }
             writer.close();
@@ -32,15 +36,23 @@ public class FileEdytor {
         }
     }
 
-    public String convertToData(Product product) {
-        return new StringBuilder()
-                .append(product.getClass().getSimpleName())
-                .append(";")
-                .append(product.getPrize())
-                .append(";")
-                .append(product.getKeyProduct())
-                .append(";")
-                .append(product.getQuantity())
-                .toString();
+    public String convertUserToData(User user) {
+        return user.getLogin() +
+                ";" +
+                user.getPassword() +
+                ";" +
+                user.getRole();
+
     }
+
+    public String convertProductToData(Product product) {
+        return product.getClass().getSimpleName() +
+                ";" +
+                product.getPrize() +
+                ";" +
+                product.getKeyProduct() +
+                ";" +
+                product.getQuantity();
+    }
+
 }

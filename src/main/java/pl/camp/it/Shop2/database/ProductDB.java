@@ -26,7 +26,6 @@ public class ProductDB {
     Product mouse = new Mouse(300, 124, 50, "mouse");
     Product keyboard = new Keyboard(600, 125, 11332, "keyboard");
     Product hardrive = new Hardrive(800, 126, 4, "hardrive");
-
     Product pendrive = new Pendrive(30, 127, 10, "pendrive");
 
     public void listOfProducts() {
@@ -36,7 +35,6 @@ public class ProductDB {
         shopProductList.add(keyboard);
         shopProductList.add(hardrive);
         shopProductList.add(pendrive);
-
     }
 
     public void printListOfAvailableProducts() {
