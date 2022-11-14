@@ -12,30 +12,30 @@ public class ProductDB {
     private final OptionsProvider optionsProvider = new OptionsProvider();
 
 
-    private final List<Product> shopProductList = new ArrayList<>();
+    private static final List<Product> shopProductList = new ArrayList<>();
 
     List<String> availableProducts = new ArrayList<>();
 
 
-    public List<Product> getShopProductList() {
+    public static List<Product> getShopProductList() {
         return shopProductList;
     }
 
-    Product computer = new Computer(5000, 122, 3, "computer");
-    Product monitor = new Monitor(300, 123, 6, "monitor");
-    Product mouse = new Mouse(300, 124, 50, "mouse");
-    Product keyboard = new Keyboard(600, 125, 11332, "keyboard");
-    Product hardrive = new Hardrive(800, 126, 4, "hardrive");
-    Product pendrive = new Pendrive(30, 127, 10, "pendrive");
-
-    public void listOfProducts() {
-        shopProductList.add(computer);
-        shopProductList.add(monitor);
-        shopProductList.add(mouse);
-        shopProductList.add(keyboard);
-        shopProductList.add(hardrive);
-        shopProductList.add(pendrive);
-    }
+    //   Product computer = new Computer(5000, 122, 3, "computer");
+//     Product monitor = new Monitor(300, 123, 6, "monitor");
+//     Product mouse = new Mouse(300, 124, 50, "mouse");
+//     Product keyboard = new Keyboard(600, 125, 11332, "keyboard");
+//      Product hardrive = new Hardrive(800, 126, 4, "hardrive");
+//      Product pendrive = new Pendrive(30, 127, 10, "pendrive");
+//
+//       public void listOfProducts() {
+//        shopProductList.add(computer);
+//        shopProductList.add(monitor);
+//        shopProductList.add(mouse);
+//        shopProductList.add(keyboard);
+//        shopProductList.add(hardrive);
+//        shopProductList.add(pendrive);
+//       }
 
     public void printListOfAvailableProducts() {
 
@@ -53,32 +53,38 @@ public class ProductDB {
         switch (optionsProvider.readChar("Insert your choice:")) {
             case '1' -> {
                 gui.askUserForQuantity();
-                getShopProductList().set(0, new Computer(5000, 122, 3 + optionsProvider.readInt(), "computer"));
+                Computer computer = new Computer(5000, 122, 3 + optionsProvider.readInt(), "computer");
+                getShopProductList().set(0, computer);
                 gui.printAddProductToDB(computer.getName());
             }
             case '2' -> {
                 gui.askUserForQuantity();
-                getShopProductList().set(2, new Mouse(300, 124, 50, "mouse"));
+                Mouse mouse = new Mouse(300, 124, 50, "mouse");
+                getShopProductList().set(2, mouse);
                 gui.printAddProductToDB(mouse.getName());
             }
             case '3' -> {
                 gui.askUserForQuantity();
-                getShopProductList().set(3, new Keyboard(600, 125, 11332 + optionsProvider.readInt(), "keyboard"));
+                Keyboard keyboard = new Keyboard(600, 125, 11332 + optionsProvider.readInt(), "keyboard");
+                getShopProductList().set(3, keyboard);
                 gui.printAddProductToDB(keyboard.getName());
             }
             case '4' -> {
                 gui.askUserForQuantity();
-                getShopProductList().set(1, new Monitor(300, 123, 6 + optionsProvider.readInt(), "monitor"));
+                Monitor monitor = new Monitor(300, 123, 6 + optionsProvider.readInt(), "monitor");
+                getShopProductList().set(1, monitor);
                 gui.printAddProductToDB(monitor.getName());
             }
             case '5' -> {
                 gui.askUserForQuantity();
-                getShopProductList().set(4, new Hardrive(800, 126, 4 + optionsProvider.readInt(), "hardrive"));
+                Hardrive hardrive = new Hardrive(800, 126, 4 + optionsProvider.readInt(), "hardrive");
+                getShopProductList().set(4, hardrive);
                 gui.printAddProductToDB(hardrive.getName());
             }
             case '6' -> {
                 gui.askUserForQuantity();
-                getShopProductList().set(5, new Pendrive(30, 127, 10 + optionsProvider.readInt(), "pendrive"));
+                Pendrive pendrive = new Pendrive(30, 127, 10 + optionsProvider.readInt(), "pendrive");
+                getShopProductList().set(5, pendrive);
                 gui.printAddProductToDB(pendrive.getName());
             }
             default -> gui.printNothingAdded();
@@ -92,61 +98,57 @@ public class ProductDB {
             case '1' -> {
                 gui.askUserForQuantity();
                 int chosenQuantity = optionsProvider.readInt();
-
-                if (chosenQuantity <= computer.getQuantity()) {
-                    computer.setQuantity(computer.getQuantity() - chosenQuantity);
-                    gui.printSuccessfullyBought(computer.getName(), chosenQuantity, chosenQuantity * computer.getPrize());
+                if (chosenQuantity <= shopProductList.get(0).getQuantity()) {
+                    shopProductList.get(0).setQuantity(shopProductList.get(0).getQuantity() - chosenQuantity);
+                    gui.printSuccessfullyBought(shopProductList.get(0).getName(), chosenQuantity, chosenQuantity * shopProductList.get(0).getPrize());
                 } else gui.unsuccessfullyBought();
             }
             case '2' -> {
                 gui.askUserForQuantity();
                 int chosenQuantity = optionsProvider.readInt();
-
-                if (chosenQuantity <= mouse.getQuantity()) {
-                    mouse.setQuantity(mouse.getQuantity() - chosenQuantity);
-                    gui.printSuccessfullyBought(mouse.getName(), chosenQuantity, chosenQuantity * mouse.getPrize());
+                if (chosenQuantity <= shopProductList.get(2).getQuantity()) {
+                    shopProductList.get(2).setQuantity(shopProductList.get(2).getQuantity() - chosenQuantity);
+                    gui.printSuccessfullyBought(shopProductList.get(2).getName(), chosenQuantity, chosenQuantity * shopProductList.get(2).getPrize());
                 } else gui.unsuccessfullyBought();
             }
-                case '3' -> {
-                    gui.askUserForQuantity();
-                    int chosenQuantity = optionsProvider.readInt();
-                    if (chosenQuantity <= keyboard.getQuantity()) {
-                        keyboard.setQuantity(keyboard.getQuantity() - chosenQuantity);
-                        gui.printSuccessfullyBought(keyboard.getName(), chosenQuantity, chosenQuantity * keyboard.getPrize());
-                    } else gui.unsuccessfullyBought();
-                }
-                    case '4' -> {
-                        gui.askUserForQuantity();
-                        int chosenQuantity = optionsProvider.readInt();
-
-                        if (chosenQuantity <= monitor.getQuantity()) {
-                            monitor.setQuantity(monitor.getQuantity() - chosenQuantity);
-                            gui.printSuccessfullyBought(monitor.getName(), chosenQuantity, chosenQuantity * monitor.getPrize());
-                        } else gui.unsuccessfullyBought();
-                    }
-                    case '5' -> {
-                        gui.askUserForQuantity();
-                        int chosenQuantity = optionsProvider.readInt();
-
-                        if (chosenQuantity <= hardrive.getQuantity()) {
-                            hardrive.setQuantity(hardrive.getQuantity() - chosenQuantity);
-                            gui.printSuccessfullyBought(hardrive.getName(), chosenQuantity, chosenQuantity * hardrive.getPrize());
-                        } else gui.unsuccessfullyBought();
-                    }
-                    case '6' -> {
-                        gui.askUserForQuantity();
-                        int chosenQuantity = optionsProvider.readInt();
-
-                        if (chosenQuantity <= pendrive.getQuantity()) {
-                            pendrive.setQuantity(pendrive.getQuantity() - chosenQuantity);
-                            gui.printSuccessfullyBought(pendrive.getName(), chosenQuantity, chosenQuantity * pendrive.getPrize());
-                        } else gui.unsuccessfullyBought();
-                    }
-
-                    default -> System.out.println("--Wrong credentials--");
-                }
+            case '3' -> {
+                gui.askUserForQuantity();
+                int chosenQuantity = optionsProvider.readInt();
+                if (chosenQuantity <= shopProductList.get(3).getQuantity()) {
+                    shopProductList.get(0).setQuantity(shopProductList.get(3).getQuantity() - chosenQuantity);
+                    gui.printSuccessfullyBought(shopProductList.get(3).getName(), chosenQuantity, chosenQuantity * shopProductList.get(3).getPrize());
+                } else gui.unsuccessfullyBought();
+            }
+            case '4' -> {
+                gui.askUserForQuantity();
+                int chosenQuantity = optionsProvider.readInt();
+                if (chosenQuantity <= shopProductList.get(1).getQuantity()) {
+                    shopProductList.get(1).setQuantity(shopProductList.get(1).getQuantity() - chosenQuantity);
+                    gui.printSuccessfullyBought(shopProductList.get(1).getName(), chosenQuantity, chosenQuantity * shopProductList.get(1).getPrize());
+                } else gui.unsuccessfullyBought();
+            }
+            case '5' -> {
+                gui.askUserForQuantity();
+                int chosenQuantity = optionsProvider.readInt();
+                if (chosenQuantity <= shopProductList.get(4).getQuantity()) {
+                    shopProductList.get(4).setQuantity(shopProductList.get(4).getQuantity() - chosenQuantity);
+                    gui.printSuccessfullyBought(shopProductList.get(4).getName(), chosenQuantity, chosenQuantity * shopProductList.get(4).getPrize());
+                    ;
+                } else gui.unsuccessfullyBought();
+            }
+            case '6' -> {
+                gui.askUserForQuantity();
+                int chosenQuantity = optionsProvider.readInt();
+                if (chosenQuantity <= shopProductList.get(5).getQuantity()) {
+                    shopProductList.get(5).setQuantity(shopProductList.get(5).getQuantity() - chosenQuantity);
+                    gui.printSuccessfullyBought(shopProductList.get(5).getName(), chosenQuantity, chosenQuantity * shopProductList.get(5).getPrize());
+                } else gui.unsuccessfullyBought();
             }
 
+            default -> System.out.println("--Wrong credentials--");
         }
+    }
+
+}
 
 

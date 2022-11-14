@@ -23,8 +23,10 @@ public class Engine {
 
 
             boolean successfulLogged = false;
-
+        //    productDB.listOfProducts();
             boolean flag = true;
+            fileEdytor.readFile();
+
             while (flag) {
                 gui.printIntroducing();
                 char choice = gui.registerOrLogin();
@@ -43,7 +45,7 @@ public class Engine {
                         System.out.println("wrong choice");
                 }
             }
-            productDB.listOfProducts();
+
             while (successfulLogged) {
                 gui.printMENU();
 

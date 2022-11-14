@@ -15,11 +15,10 @@ public class UserDB {
 
     private static User loggedUser;
 
-    public UserDB() {
-        users.add(new User("admin", "c8d76e034ae1dbf3548d6eca3f1a08bd", User.Role.isAdmin));
-
-        users.add(new User("michal", "ece2c66cf415af02fcf4f6449ca2ad1c", User.Role.isUser));
-    }
+//    public UserDB() {
+//       users.add(new User("admin", "c8d76e034ae1dbf3548d6eca3f1a08bd", User.Role.isAdmin));
+//       users.add(new User("michal", "ece2c66cf415af02fcf4f6449ca2ad1c", User.Role.isUser));
+//    }
 
 
     public void addUserToDB() throws IOException {

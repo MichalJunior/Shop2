@@ -33,10 +33,10 @@ public class Product {
     }
 
     public Product(String[] params) {
-        this.name = params[1];
-        this.prize = Integer.parseInt(params[2]);
-        this.keyProduct = Integer.parseInt(params[3]);
-        this.quantity = Integer.parseInt(params[4]);
+        this.name = params[0];
+        this.prize = Integer.parseInt(params[1]);
+        this.keyProduct = Integer.parseInt(params[2]);
+        this.quantity = Integer.parseInt(params[3]);
 
     }
 
