@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="Writing file methods">
+    <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="Działa Wszystko!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/Editor/FileEdytor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/Editor/FileEdytor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/core/Engine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/ProductDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/ProductDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/UserDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/core/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/core/Engine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/database/ProductDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/database/ProductDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/database/UserDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/database/UserDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/model/User$Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/model/User$Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/model/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668425545761</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Działa Wszystko!!!">
+      <created>1668432105509</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1668432105509</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -369,7 +366,8 @@
     <MESSAGE value="Oezu..refector!" />
     <MESSAGE value="Persisting to file :)" />
     <MESSAGE value="Writing file methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Writing file methods" />
+    <MESSAGE value="Działa Wszystko!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Działa Wszystko!!!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
