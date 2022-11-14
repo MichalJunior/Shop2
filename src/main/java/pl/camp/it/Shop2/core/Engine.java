@@ -70,9 +70,6 @@ public class Engine {
                     case '5' -> {
                         if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {  //Administration addAdminRights
                             userDB.makeUserAdmin();
-                            //   for (User user : UserDB.getUsers()) {
-                            //      System.out.println("login:" + user.getLogin() + " password " + user.getPassword() + " role " + user.getRole());
-                            //  }
                         } else gui.printAdminWarning();
                     }
                 }

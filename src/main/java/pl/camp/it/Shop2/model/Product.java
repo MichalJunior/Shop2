@@ -12,7 +12,7 @@ public class Product {
         return name;
     }
 
-    public  int getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
@@ -25,12 +25,19 @@ public class Product {
     private int quantity;
 
 
-
     public Product(int prize, int keyProduct, int quantity, String name) {
         this.prize = prize;
         this.keyProduct = keyProduct;
         this.quantity = quantity;
         this.name = name;
+    }
+
+    public Product(String[] params) {
+        this.name = params[1];
+        this.prize = Integer.parseInt(params[2]);
+        this.keyProduct = Integer.parseInt(params[3]);
+        this.quantity = Integer.parseInt(params[4]);
+
     }
 
     public int getKeyProduct() {

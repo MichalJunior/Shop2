@@ -20,6 +20,12 @@ public class User {
         this.password = password;
     }
 
+    public User(String[] params) {
+        this.login = params[1];
+        this.password = params[2];
+        this.role = Role.valueOf(params[3]);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
