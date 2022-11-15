@@ -1,6 +1,6 @@
-package pl.camp.it.Shop2.database;
+package pl.camp.it.Shop2.databases;
 
-import pl.camp.it.Shop2.OptionsProvider;
+import pl.camp.it.Shop2.providers.OptionsProvider;
 import pl.camp.it.Shop2.gui.GUI;
 import pl.camp.it.Shop2.model.*;
 

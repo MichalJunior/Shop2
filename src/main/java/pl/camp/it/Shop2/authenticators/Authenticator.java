@@ -1,7 +1,7 @@
-package pl.camp.it.Shop2;
+package pl.camp.it.Shop2.authenticators;
 
 
-import pl.camp.it.Shop2.database.UserDB;
+import pl.camp.it.Shop2.databases.UserDB;
 import pl.camp.it.Shop2.gui.GUI;
 import pl.camp.it.Shop2.model.User;
 

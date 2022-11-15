@@ -1,7 +1,7 @@
-package pl.camp.it.Shop2.Editor;
+package pl.camp.it.Shop2.Editors;
 
-import pl.camp.it.Shop2.database.ProductDB;
-import pl.camp.it.Shop2.database.UserDB;
+import pl.camp.it.Shop2.databases.ProductDB;
+import pl.camp.it.Shop2.databases.UserDB;
 import pl.camp.it.Shop2.model.*;
 
 import javax.security.auth.login.CredentialException;

@@ -1,4 +1,4 @@
-package pl.camp.it.Shop2;
+package pl.camp.it.Shop2.providers;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -2,16 +2,11 @@ package pl.camp.it.Shop2.gui;
 
 
 import org.apache.commons.codec.digest.DigestUtils;
-import pl.camp.it.Shop2.Authenticator;
-import pl.camp.it.Shop2.OptionsProvider;
-import pl.camp.it.Shop2.database.ProductDB;
-import pl.camp.it.Shop2.database.UserDB;
+import pl.camp.it.Shop2.providers.OptionsProvider;
+import pl.camp.it.Shop2.databases.UserDB;
 import pl.camp.it.Shop2.model.User;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.HashMap;
 import java.util.List;
 
 

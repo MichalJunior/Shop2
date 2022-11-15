@@ -2,11 +2,11 @@ package pl.camp.it.Shop2.core;
 
 import java.io.IOException;
 
-import pl.camp.it.Shop2.Authenticator;
-import pl.camp.it.Shop2.Editor.FileEdytor;
-import pl.camp.it.Shop2.OptionsProvider;
-import pl.camp.it.Shop2.database.ProductDB;
-import pl.camp.it.Shop2.database.UserDB;
+import pl.camp.it.Shop2.authenticators.Authenticator;
+import pl.camp.it.Shop2.Editors.FileEdytor;
+import pl.camp.it.Shop2.providers.OptionsProvider;
+import pl.camp.it.Shop2.databases.ProductDB;
+import pl.camp.it.Shop2.databases.UserDB;
 import pl.camp.it.Shop2.gui.GUI;
 import pl.camp.it.Shop2.model.User;
 
