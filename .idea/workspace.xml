@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="Refactoring done!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/ProductDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/ProductDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/UserDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/core/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/core/Engine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/database/ProductDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/database/ProductDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/gui/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/gui/GUI.class" afterDir="false" />
+    <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="login and password longer than 3 chars-refactor Finished!">
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/database/UserDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/database/UserDB.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668447496281</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="login and password longer than 3 chars-refactor Finished!">
+      <created>1668519567688</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1668519567688</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -388,7 +389,8 @@
     <MESSAGE value="Writing file methods" />
     <MESSAGE value="Działa Wszystko!!!" />
     <MESSAGE value="Refactoring done!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring done!" />
+    <MESSAGE value="login and password longer than 3 chars-refactor Finished!" />
+    <option name="LAST_COMMIT_MESSAGE" value="login and password longer than 3 chars-refactor Finished!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
