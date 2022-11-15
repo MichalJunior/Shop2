@@ -20,12 +20,16 @@ public class GUI {
     private static final String seed = "GdySieNieMaCoSieLubiToSieLubiCoSieMa";
 
     public User readLoginAndPassword() throws IOException {
-
         System.out.print("Login:");
         String login = optionsProvider.readString();
         System.out.print("Password:");
-        String password = DigestUtils.md5Hex(optionsProvider.readString() + seed);
-        return new User(login, password);
+        String password = optionsProvider.readString();
+        if (login.length() >= 3 && password.length() >= 3) {
+            return new User(login, DigestUtils.md5Hex(password + seed));
+        } else {
+            System.out.println("----Login & password must be longer than 2 chars---");
+            return readLoginAndPassword();
+        }
     }
 
     public void printIntroducing() {
@@ -97,6 +101,7 @@ public class GUI {
     public char registerOrLogin() throws IOException {
         return optionsProvider.readChar("------Would you register or log in?------\n1-register/2-log in :");
     }
+
     public void printEnd() {
         System.out.println(" ***  Thanks for visiting my shop  *** :)");
     }

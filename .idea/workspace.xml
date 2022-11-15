@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="Działa Wszystko!!!">
+    <list default="true" id="364e28fc-3f0d-4760-80ba-266c98022ab5" name="Default Changelist" comment="Refactoring done!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/Editor/FileEdytor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/Editor/FileEdytor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/core/Engine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/ProductDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/ProductDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/database/UserDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/camp/it/Shop2/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/core/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/core/Engine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/database/ProductDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/database/ProductDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/gui/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/camp/it/Shop2/gui/GUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -320,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668446556311</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Refactoring done!">
+      <created>1668447496281</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1668447496281</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -378,7 +387,8 @@
     <MESSAGE value="Persisting to file :)" />
     <MESSAGE value="Writing file methods" />
     <MESSAGE value="Działa Wszystko!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Działa Wszystko!!!" />
+    <MESSAGE value="Refactoring done!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring done!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

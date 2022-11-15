@@ -39,7 +39,7 @@ public class ProductDB {
             }
             case '2' -> {
                 gui.askUserForQuantity();
-                Mouse mouse = new Mouse(300, 124, 50, "mouse");
+                Mouse mouse = new Mouse(300, 124, 50 + optionsProvider.readInt(), "mouse");
                 getShopProductList().set(2, mouse);
                 gui.printAddProductToDB(mouse.getName());
             }
