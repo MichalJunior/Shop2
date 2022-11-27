@@ -9,8 +9,11 @@ import java.io.*;
 import java.util.List;
 
 public class FileEdytor {
-
-    private String DATABASE_FILE = "bd.txt";
+    private final ProductDB productDB = ProductDB.getInstance();
+    private final UserDB userDB = UserDB.getInstance();
+    private final String DATABASE_FILE = "bd.txt";
+    private static final FileEdytor instance = new FileEdytor();
+   private FileEdytor(){}
 
     public void readFile() {
         try {
@@ -28,19 +31,19 @@ public class FileEdytor {
     private void convertDataToProductOrUserAddToLists(String data) {
         String[] productDate = data.split(";");
         switch (productDate[0]) {
-            case "Computer" -> ProductDB.getShopProductList().add(new Computer(productDate));
+            case "Computer" -> productDB.getShopProductList().add(new Computer(productDate));
 
-            case "Mouse" -> ProductDB.getShopProductList().add(new Mouse(productDate));
+            case "Mouse" -> productDB.getShopProductList().add(new Mouse(productDate));
 
-            case "Keyboard" -> ProductDB.getShopProductList().add(new Keyboard(productDate));
+            case "Keyboard" -> productDB.getShopProductList().add(new Keyboard(productDate));
 
-            case "Hardrive" -> ProductDB.getShopProductList().add(new Hardrive(productDate));
+            case "Hardrive" -> productDB.getShopProductList().add(new Hardrive(productDate));
 
-            case "Monitor" -> ProductDB.getShopProductList().add(new Monitor(productDate));
+            case "Monitor" -> productDB.getShopProductList().add(new Monitor(productDate));
 
-            case "Pendrive" -> ProductDB.getShopProductList().add(new Pendrive(productDate));
+            case "Pendrive" -> productDB.getShopProductList().add(new Pendrive(productDate));
 
-            case "User" -> UserDB.getUsers().add(new User(productDate));
+            case "User" -> userDB.getUsers().add(new User(productDate));
             default -> {
                 try {
                     throw new CredentialException();
@@ -95,6 +98,9 @@ public class FileEdytor {
                 product.getKeyProduct() +
                 ";" +
                 product.getQuantity();
+    }
+    public static FileEdytor getInstance(){
+       return instance;
     }
 
 }

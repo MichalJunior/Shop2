@@ -8,14 +8,16 @@ import java.io.IOException;
 import java.util.*;
 
 public class ProductDB {
-    private final GUI gui = new GUI();
-    private final OptionsProvider optionsProvider = new OptionsProvider();
-    private static final List<Product> shopProductList = new ArrayList<>();
-    List<String> availableProducts = new ArrayList<>();
 
-    public static List<Product> getShopProductList() {
-        return shopProductList;
+    private final GUI gui = GUI.getInstance();
+    private final OptionsProvider optionsProvider = OptionsProvider.getInstance();
+    private static final ProductDB instance = new ProductDB();
+    List<String> availableProducts = new ArrayList<>();
+    private static final List<Product> shopProductList = new ArrayList<>();
+
+    private ProductDB() {
     }
+
 
     public void printListOfAvailableProducts() {
 
@@ -113,7 +115,6 @@ public class ProductDB {
                 if (chosenQuantity <= shopProductList.get(4).getQuantity()) {
                     shopProductList.get(4).setQuantity(shopProductList.get(4).getQuantity() - chosenQuantity);
                     gui.printSuccessfullyBought(shopProductList.get(4).getName(), chosenQuantity, chosenQuantity * shopProductList.get(4).getPrize());
-                    ;
                 } else gui.unsuccessfullyBought();
             }
             case '6' -> {
@@ -126,6 +127,13 @@ public class ProductDB {
             }
             default -> System.out.println("--Wrong credentials--");
         }
+    }
+
+    public List<Product> getShopProductList() {
+        return shopProductList;
+    }
+    public static ProductDB getInstance(){
+        return instance;
     }
 }
 

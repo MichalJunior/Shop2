@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class OptionsProvider {
+    private static final OptionsProvider instance = new OptionsProvider();
+    private OptionsProvider(){}
     public char readChar(String message) throws IOException {
         System.out.print(message);
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
@@ -22,5 +24,8 @@ public class OptionsProvider {
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         return Integer.parseInt(bufferedReader.readLine());
+    }
+    public static OptionsProvider getInstance(){
+        return instance;
     }
 }

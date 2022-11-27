@@ -7,7 +7,7 @@ import java.io.*;
 
 public class ShopAPP {
     public static void main(String[] args) {
-        Engine.start();
+        Engine.getInstance().start();
     }
 
 }

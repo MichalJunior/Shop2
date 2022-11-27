@@ -9,8 +9,9 @@ import java.io.IOException;
 
 public class Authenticator {
 
-    private final GUI gui = new GUI();
-  // UserDB userDB = new UserDB();
+    private final GUI gui = GUI.getInstance();
+    private static final Authenticator instance = new Authenticator();
+    private Authenticator(){}
 
     public boolean tryAuthenticate() throws IOException {
         User newUser = gui.readLoginAndPassword();
@@ -22,5 +23,8 @@ public class Authenticator {
         }
         gui.printWrongCredentials();
         return tryAuthenticate();
+    }
+    public static Authenticator getInstance(){
+        return instance;
     }
 }

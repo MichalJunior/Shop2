@@ -10,16 +10,20 @@ import java.util.List;
 public class UserDB {
 
 
-    private static final List<User> users = new ArrayList<>();
-    private final GUI gui = new GUI();
+    private static final UserDB instance = new UserDB();
+    private final GUI gui = GUI.getInstance();
 
     private static User loggedUser;
+    private static final List<User> users = new ArrayList<>();
+
+    private UserDB() {
+    }
 
     public void addUserToDB() throws IOException {
         User newUser = gui.readLoginAndPassword();
         for (User userOnList : getUsers()) {
             if (userOnList.equals(newUser)) {
-                System.out.println("  !!!!  this User exists in DataBase  !!!!");
+                System.out.println("  !!!! a user with this Login already exists  !!!!");
                 addUserToDB();
             }
         }
@@ -49,16 +53,19 @@ public class UserDB {
 
     }
 
-    public static List<User> getUsers() {
+    public  List<User> getUsers() {
         return users;
     }
 
-    public static User getLoggedUser() {
+    public User getLoggedUser() {
         return loggedUser;
     }
 
-    public static void setLoggedUser(User loggedUser) {
+    public void setLoggedUser(User loggedUser) {
         UserDB.loggedUser = loggedUser;
+    }
+    public static UserDB getInstance(){
+        return instance;
     }
 }
 

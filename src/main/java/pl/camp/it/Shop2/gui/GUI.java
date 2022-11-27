@@ -11,8 +11,14 @@ import java.util.List;
 
 
 public class GUI {
-    private static final OptionsProvider optionsProvider = new OptionsProvider();
+
+    private  final OptionsProvider optionsProvider = OptionsProvider.getInstance();
+    private final UserDB userDB = UserDB.getInstance();
     private static final String seed = "GdySieNieMaCoSieLubiToSieLubiCoSieMa";
+    private static final GUI instance = new GUI();
+
+    private GUI() {
+    }
 
     public User readLoginAndPassword() throws IOException {
         System.out.print("Login:");
@@ -33,11 +39,11 @@ public class GUI {
 
     public void printMENU() {
         System.out.println(" +----------------------------MENU---------------------------+\n1.View list of products");
-        if (UserDB.getLoggedUser().getRole() == User.Role.isUser) {
+        if (userDB.getLoggedUser().getRole() == User.Role.isUser) {
             System.out.println("2.Buy product");
         }
         System.out.println("3.Exit");
-        if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {
+        if (userDB.getLoggedUser().getRole() == User.Role.isAdmin) {
             System.out.println("4. * Add product * ");
             System.out.println("5. * Make User Admin *");
         }
@@ -66,7 +72,7 @@ public class GUI {
 
 
     public void printBuyAnnouncement() {
-        if (UserDB.getLoggedUser().getRole() == (User.Role.isAdmin)) {
+        if (userDB.getLoggedUser().getRole() == (User.Role.isAdmin)) {
             System.out.println("***    PO CO KUPUJESZ WŁASNY TOWAR BARANIE???    ***");
         } else System.out.println("--- what product would you buy? ---");
 
@@ -99,6 +105,9 @@ public class GUI {
 
     public void printEnd() {
         System.out.println(" ***  Thanks for visiting my shop  *** :)");
+    }
+    public static GUI getInstance(){
+        return instance;
     }
 }
 

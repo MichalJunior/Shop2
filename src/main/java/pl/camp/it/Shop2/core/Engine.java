@@ -12,15 +12,19 @@ import pl.camp.it.Shop2.model.User;
 
 
 public class Engine {
-    public static void start() {
-        try {
-            ProductDB productDB = new ProductDB();
-            Authenticator authenticator = new Authenticator();
-            UserDB userDB = new UserDB();
-            OptionsProvider optionsProvider = new OptionsProvider();
-            GUI gui = new GUI();
-            FileEdytor fileEdytor = new FileEdytor();
 
+
+    private static final Engine instance = new Engine();
+    private final ProductDB productDB = ProductDB.getInstance();
+    private final Authenticator authenticator = Authenticator.getInstance();
+    private final UserDB userDB = UserDB.getInstance();
+    private final OptionsProvider optionsProvider = OptionsProvider.getInstance();
+    private final GUI gui = GUI.getInstance();
+    private final FileEdytor fileEdytor = FileEdytor.getInstance();
+    private Engine(){}
+
+    public void start() {
+        try {
             boolean successfulLogged = false;
             boolean flag = true;
             fileEdytor.readFile();
@@ -49,18 +53,18 @@ public class Engine {
                     }
                     case '3' -> {
                         gui.printEnd();
-                        fileEdytor.persistToFileProductsAndUsers(ProductDB.getShopProductList(), UserDB.getUsers());
+                        fileEdytor.persistToFileProductsAndUsers(productDB.getShopProductList(), userDB.getUsers());
                         System.exit(0);
                     }
                     case '4' -> {
-                        if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {
+                        if (userDB.getLoggedUser().getRole() == User.Role.isAdmin) {
                             gui.printAddingAnnouncement();
                             gui.printProductsPanel();
                             productDB.addProduct();
                         } else gui.printAdminWarning();
                     }
                     case '5' -> {
-                        if (UserDB.getLoggedUser().getRole() == User.Role.isAdmin) {
+                        if (userDB.getLoggedUser().getRole() == User.Role.isAdmin) {
                             userDB.makeUserAdmin();
                         } else gui.printAdminWarning();
                     }
@@ -69,5 +73,8 @@ public class Engine {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+    }
+    public static Engine getInstance(){
+        return instance;
     }
 }
