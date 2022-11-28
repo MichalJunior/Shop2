@@ -1,19 +1,23 @@
 package pl.camp.it.Shop2.Editors;
 
-import pl.camp.it.Shop2.databases.ProductDB;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import pl.camp.it.Shop2.databases.UserDB;
+import pl.camp.it.Shop2.interfaces.IProductDB;
 import pl.camp.it.Shop2.model.*;
 
 import javax.security.auth.login.CredentialException;
 import java.io.*;
 import java.util.List;
+@Component
 
-public class FileEdytor {
-    private final ProductDB productDB = ProductDB.getInstance();
-    private final UserDB userDB = UserDB.getInstance();
+public class FileEditor {
+    @Autowired
+    private IProductDB productDB;
+    @Autowired
+    private UserDB userDB;
     private final String DATABASE_FILE = "bd.txt";
-    private static final FileEdytor instance = new FileEdytor();
-   private FileEdytor(){}
+
 
     public void readFile() {
         try {
@@ -98,9 +102,6 @@ public class FileEdytor {
                 product.getKeyProduct() +
                 ";" +
                 product.getQuantity();
-    }
-    public static FileEdytor getInstance(){
-       return instance;
     }
 
 }

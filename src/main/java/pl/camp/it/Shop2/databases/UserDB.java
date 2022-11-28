@@ -1,23 +1,25 @@
 package pl.camp.it.Shop2.databases;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import pl.camp.it.Shop2.gui.GUI;
+import pl.camp.it.Shop2.interfaces.IUserDB;
 import pl.camp.it.Shop2.model.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+@Component
 
-public class UserDB {
+public class UserDB implements IUserDB {
 
-
-    private static final UserDB instance = new UserDB();
-    private final GUI gui = GUI.getInstance();
+@Autowired
+    private  GUI gui;
 
     private static User loggedUser;
     private static final List<User> users = new ArrayList<>();
 
-    private UserDB() {
-    }
+
 
     public void addUserToDB() throws IOException {
         User newUser = gui.readLoginAndPassword();
@@ -63,9 +65,6 @@ public class UserDB {
 
     public void setLoggedUser(User loggedUser) {
         UserDB.loggedUser = loggedUser;
-    }
-    public static UserDB getInstance(){
-        return instance;
     }
 }
 

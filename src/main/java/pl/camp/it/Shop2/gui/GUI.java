@@ -2,6 +2,8 @@ package pl.camp.it.Shop2.gui;
 
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import pl.camp.it.Shop2.providers.OptionsProvider;
 import pl.camp.it.Shop2.databases.UserDB;
 import pl.camp.it.Shop2.model.User;
@@ -9,17 +11,15 @@ import pl.camp.it.Shop2.model.User;
 import java.io.IOException;
 import java.util.List;
 
+@Component
 
 public class GUI {
+    @Autowired
 
-    private  final OptionsProvider optionsProvider = OptionsProvider.getInstance();
-    private final UserDB userDB = UserDB.getInstance();
+    private OptionsProvider optionsProvider;
+    @Autowired
+    private  UserDB userDB;
     private static final String seed = "GdySieNieMaCoSieLubiToSieLubiCoSieMa";
-    private static final GUI instance = new GUI();
-
-    private GUI() {
-    }
-
     public User readLoginAndPassword() throws IOException {
         System.out.print("Login:");
         String login = optionsProvider.readString();
@@ -105,9 +105,6 @@ public class GUI {
 
     public void printEnd() {
         System.out.println(" ***  Thanks for visiting my shop  *** :)");
-    }
-    public static GUI getInstance(){
-        return instance;
     }
 }
 

@@ -1,5 +1,8 @@
 package pl.camp.it.Shop2.databases;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import pl.camp.it.Shop2.interfaces.IProductDB;
 import pl.camp.it.Shop2.providers.OptionsProvider;
 import pl.camp.it.Shop2.gui.GUI;
 import pl.camp.it.Shop2.model.*;
@@ -7,16 +10,14 @@ import pl.camp.it.Shop2.model.*;
 import java.io.IOException;
 import java.util.*;
 
-public class ProductDB {
-
-    private final GUI gui = GUI.getInstance();
-    private final OptionsProvider optionsProvider = OptionsProvider.getInstance();
-    private static final ProductDB instance = new ProductDB();
+@Component
+public class ProductDB implements IProductDB {
+    @Autowired
+    private GUI gui;
+    @Autowired
+    private OptionsProvider optionsProvider;
     List<String> availableProducts = new ArrayList<>();
     private static final List<Product> shopProductList = new ArrayList<>();
-
-    private ProductDB() {
-    }
 
 
     public void printListOfAvailableProducts() {
@@ -131,9 +132,6 @@ public class ProductDB {
 
     public List<Product> getShopProductList() {
         return shopProductList;
-    }
-    public static ProductDB getInstance(){
-        return instance;
     }
 }
 

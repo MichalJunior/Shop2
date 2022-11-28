@@ -1,30 +1,31 @@
 package pl.camp.it.Shop2.authenticators;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import pl.camp.it.Shop2.databases.UserDB;
 import pl.camp.it.Shop2.gui.GUI;
 import pl.camp.it.Shop2.model.User;
 
 import java.io.IOException;
 
+@Component
 public class Authenticator {
-
-    private final GUI gui = GUI.getInstance();
-    private static final Authenticator instance = new Authenticator();
-    private Authenticator(){}
+    @Autowired
+    private GUI gui;
+    @Autowired
+    private UserDB userDB;
 
     public boolean tryAuthenticate() throws IOException {
         User newUser = gui.readLoginAndPassword();
-        for (User userOnList : UserDB.getUsers()) {
+        for (User userOnList : userDB.getUsers()) {
             if (userOnList.equals(newUser)) {
-                UserDB.setLoggedUser(userOnList);
+                userDB.setLoggedUser(userOnList);
                 return true;
             }
         }
         gui.printWrongCredentials();
         return tryAuthenticate();
     }
-    public static Authenticator getInstance(){
-        return instance;
-    }
+
 }
